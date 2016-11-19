@@ -2,6 +2,8 @@ import React from 'react';
 import Reflux from 'reflux';
 import CambioStore from '../stores/CambioStore.js';
 import CambioAction from '../actions/CambioAction.js';
+import moment from 'moment';
+
 
 var Form = React.createClass({
 
@@ -9,14 +11,13 @@ var Form = React.createClass({
 
 
   //#region Definicion de propiedades
-  getInitialState: function () {
+  etInitialState: function () {
     return {
       idReserva: '',
       Restaurante: '',
       idUsuario: '',
       price: '',
       description: '',
-      date: moment(),
       Saldo:0,
       Pago:0,
       Costo:0
