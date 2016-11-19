@@ -2,10 +2,6 @@ import React from 'react';
 import Reflux from 'reflux';
 import CambioStore from '../stores/CambioStore.js';
 import CambioAction from '../actions/CambioAction.js';
-import 'react-datetime/css/react-datetime.css';
-import moment from 'moment';
-//import Checkbox from "react-checkbox-list"
-
 
 var Form = React.createClass({
 
