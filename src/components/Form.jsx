@@ -2,7 +2,6 @@ import React from 'react';
 import Reflux from 'reflux';
 import CambioStore from '../stores/CambioStore.js';
 import CambioAction from '../actions/CambioAction.js';
-import moment from 'moment';
 
 
 var Form = React.createClass({
