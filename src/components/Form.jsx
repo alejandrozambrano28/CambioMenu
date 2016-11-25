@@ -76,8 +76,9 @@ var Form = React.createClass({
 
   guardarClic: function() {
     if(this.state.idUsuario !== '' && this.state.Restaurante !== ''  && this.state.idReserva !== '' && this.state.Pago !== '' && this.state.selected!== undefined && this.state.Costo !== ''&& this.state.Saldo !== ''){
-      alert(this.state.date) 
-      CambioAction.crearCambio(this.state.idReserva, this.state.date, this.state.lista, this.state.description, this.state.selected); // React Component instance
+      this.setState.Saldo=this.state.Pago-this.state.Costo
+      alert("el saldo del cliente es :"+this.setState.Saldo) 
+      
     }
     else
     {
@@ -94,13 +95,13 @@ var Form = React.createClass({
         React.createElement('input', {
           type: 'number',
           className: 'form-control', 
-           value:'readonly',    
+           value:'0001',    
           onChange: this.nameChange,
         }),
              React.createElement("label", {className: "label"}, 'Restaurante'),
         React.createElement('input', {
           type: 'text',
-          value:'',
+          value:'Doña ',
           className: 'form-control',       
           onChange: this.RestauranteChange,
         }),
@@ -109,15 +110,14 @@ var Form = React.createClass({
         React.createElement("label", {className: "label"}, 'Codigo de la reserva'),
         React.createElement('input', {
           type: 'number',
-          value:'readonly',
+          value:'1',
           className: 'form-control',      
           onChange: this.resChange,
         }),
 
         React.createElement("label", {className: "label"}, 'Pago Anterior de la reserva'),
-        React.createElement("input",{
+        React.createElement('input',{
           type: 'number',
-          value:'readonly',
           className:'form-control', 
           onChange:this.PagoChange.bind(this),
         }),
@@ -130,13 +130,13 @@ var Form = React.createClass({
         },
         //falta cuadrar el menu
           React.createElement("option", { value: 9 }, ""),
-          React.createElement("option", { value: 1 }, "Lunes"),
-          React.createElement("option", { value: 2 }, "Martes"),
-          React.createElement("option", { value: 3 }, "Miercoles"),
-          React.createElement("option", { value: 4 }, "Jueves"),
-          React.createElement("option", { value: 5 }, "Viernes"),
-          React.createElement("option", { value: 6 }, "Sabado"),
-          React.createElement("option", { value: 7 }, "Domingo"),
+          React.createElement("option", { value: 1 }, "Pollo Asado"),
+          React.createElement("option", { value: 2 }, "ternera"),
+          React.createElement("option", { value: 3 }, "arepa con todo"),
+          React.createElement("option", { value: 4 }, "frijoles"),
+          React.createElement("option", { value: 5 }, "papas fritas"),
+          React.createElement("option", { value: 6 }, "huevo duro"),
+          React.createElement("option", { value: 7 }, "aguapanela"),
         ),
 
         React.createElement("label", {className: "label"}, 'Costo del Nuevo Menu'),
@@ -145,12 +145,7 @@ var Form = React.createClass({
           onChange:this.CostoChange
        }),
 
-         React.createElement("label", {className: "label"}, 'Saldo del Cliente'),
-        React.createElement("input", {
-          className: 'form-control',
-          onChange:this.SaldoChange
-       }),
-      
+            
       
 
         React.createElement('input', {
